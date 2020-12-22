@@ -10,7 +10,7 @@
 
 #include "rtconfig.h"
 
-#ifdef PKG_USING_TOUCH
+#ifdef VDEVICE_USING_TOUCH
 
 #include <rtthread.h>
 #include <rtdevice.h>
@@ -21,8 +21,8 @@
 #define DBG_LVL    DBG_LOG
 #include <rtdbg.h>
 
-#define TOUCH_WIDTH     320     //resolution ratio config X
-#define TOUCH_HEIGHT    320     //resolution ratio config Y
+#define TOUCH_WIDTH     240     //resolution ratio config X
+#define TOUCH_HEIGHT    240     //resolution ratio config Y
 #define TOUCH_POINT_NUM     1   //touchpoint number
 
 static struct rt_touch_device touch_device;
@@ -138,4 +138,4 @@ static int rt_hw_touch_init(void)
 }
 INIT_DEVICE_EXPORT(rt_hw_touch_init);
 
-#endif /* PKG_USING_TOUCH */
+#endif /* VDEVICE_USING_TOUCH */
