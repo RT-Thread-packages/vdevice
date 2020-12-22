@@ -10,7 +10,7 @@
 
 #include "rtconfig.h"
 
-#ifdef PKG_USING_TOUCH
+#ifdef VDEVICE_USING_TOUCH
 
 #include <rtthread.h>
 #include <rtdevice.h>
@@ -138,4 +138,4 @@ static int rt_hw_touch_init(void)
 }
 INIT_DEVICE_EXPORT(rt_hw_touch_init);
 
-#endif /* PKG_USING_TOUCH */
+#endif /* VDEVICE_USING_TOUCH */

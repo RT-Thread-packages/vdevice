@@ -15,7 +15,7 @@
 #define DBG_LVL DBG_LOG
 #include <rtdbg.h>
 
-#ifdef PKG_USING_LCD
+#ifdef VDEVICE_USING_LCD
 
 #define LCD_USING_RGB565
 //#define LCD_USING_RGB888
@@ -144,6 +144,8 @@ const static struct rt_device_ops _lcd_ops =
     _lcd_init,
     _lcd_open,
     _lcd_close,
+    RT_NULL,
+    RT_NULL,
     _lcd_control
 };
 #endif
@@ -168,6 +170,8 @@ int rt_hw_lcd_init(void)
     lcd_dev.init = _lcd_init;
     lcd_dev.open = _lcd_open;
     lcd_dev.close = _lcd_close;
+    lcd_dev.read = RT_NULL;
+    lcd_dev.write = RT_NULL;
     lcd_dev.control = _lcd_control;
 #endif
 
@@ -180,4 +184,4 @@ int rt_hw_lcd_init(void)
 }
 INIT_DEVICE_EXPORT(rt_hw_lcd_init);
 
-#endif /* PKG_USING_LCD */
+#endif /* VDEVICE_USING_LCD */
