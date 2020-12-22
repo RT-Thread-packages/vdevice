@@ -20,8 +20,8 @@
 #define LCD_USING_RGB565
 //#define LCD_USING_RGB888
 
-#define LCD_HEIGHT 360
-#define LCD_WIDTH 360
+#define LCD_HEIGHT 240
+#define LCD_WIDTH 240
 
 #ifdef LCD_USING_RGB565
 #define LCD_BITS_PER_PIXEL 16
@@ -35,7 +35,7 @@
 
 #define LCD_FRAMEBUFFER_SIZE (LCD_WIDTH * LCD_HEIGHT * LCD_BITS_PER_PIXEL / 8)
 
-rt_uint8_t lcd_framebuffer[LCD_FRAMEBUFFER_SIZE];
+static rt_uint8_t lcd_framebuffer[LCD_FRAMEBUFFER_SIZE];
 
 static struct rt_device_graphic_info lcd_info;
 static struct rt_device lcd_dev;

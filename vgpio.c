@@ -15,7 +15,7 @@
 #define DBG_LVL DBG_LOG
 #include <rtdbg.h>
 
-#ifdef PKG_USING_PIN
+#ifdef VDEVICE_USING_PIN
 
 static void _pin_mode(struct rt_device *device, rt_base_t pin, rt_base_t mode)
 {
